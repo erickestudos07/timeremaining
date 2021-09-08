@@ -16,7 +16,7 @@ public class VoyageRepository {
             LocalDate.now().getMonthValue()-1, LocalDate.now().getDayOfMonth());
     private long timeRemaining = TRAVEL_DATE.getTimeInMillis() - TODAY.getTimeInMillis();
     private long daysRemaining = timeRemaining / (1000 * 60 * 60 * 24);
-    daysRemaining = 0;
+    daysRemaining = 0L;
 
     @GetMapping
     public String showDaysRemaining(){
