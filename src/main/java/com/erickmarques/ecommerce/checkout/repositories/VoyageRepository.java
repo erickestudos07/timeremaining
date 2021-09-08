@@ -14,20 +14,12 @@ public class VoyageRepository {
     private static final Calendar TRAVEL_DATE = new GregorianCalendar(2021,Calendar.OCTOBER,20);
     private static final Calendar TODAY = new GregorianCalendar(LocalDate.now().getYear(),
             LocalDate.now().getMonthValue()-1, LocalDate.now().getDayOfMonth());
-    private Long timeRemaining = new TRAVEL_DATE.getTimeInMillis() - TODAY.getTimeInMillis();
-    private Long daysRemaining = new timeRemaining / (1000 * 60 * 60 * 24);
-    
+    private long timeRemaining = TRAVEL_DATE.getTimeInMillis() - TODAY.getTimeInMillis();
+    private long daysRemaining = timeRemaining / (1000 * 60 * 60 * 24);
+
     @GetMapping
     public String showDaysRemaining(){
-        return response(daysRemaining);
-    }
-    
-    private String response(Long days){
-        if(days.equals(0){
-            return "<h1>É AMANHA!</h1>"
-        }else{
-            return "Faltam "+days+" dias para o dia da nossa viagem";
-        }
+        return "<h1>Faltam "+daysRemaining+" dias para o dia da nossa viagem</h1>";
     }
 
 
@@ -35,3 +27,4 @@ public class VoyageRepository {
 
 
 }
+
