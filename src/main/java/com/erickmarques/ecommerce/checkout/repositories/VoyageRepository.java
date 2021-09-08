@@ -19,7 +19,7 @@ public class VoyageRepository {
 
     @GetMapping
     public String showDaysRemaining(){
-        return "Faltam "+daysRemaining+" dias para o dia da nossa viagem";
+        return "<h1>Faltam "+daysRemaining+" dias para o dia da nossa viagem</h1>";
     }
 
 
