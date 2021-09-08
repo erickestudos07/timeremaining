@@ -15,7 +15,7 @@ public class VoyageRepository {
     private static final Calendar TODAY = new GregorianCalendar(LocalDate.now().getYear(),
             LocalDate.now().getMonthValue()-1, LocalDate.now().getDayOfMonth());
     private long timeRemaining = TRAVEL_DATE.getTimeInMillis() - TODAY.getTimeInMillis();
-    private long daysRemaining = 0L //timeRemaining / (1000 * 60 * 60 * 24);
+    private long daysRemaining = timeRemaining / (1000 * 60 * 60 * 24);
 
     @GetMapping
     public String showDaysRemaining(){
