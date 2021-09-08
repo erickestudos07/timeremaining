@@ -15,11 +15,14 @@ public class VoyageRepository {
     private static final Calendar TODAY = new GregorianCalendar(LocalDate.now().getYear(),
             LocalDate.now().getMonthValue()-1, LocalDate.now().getDayOfMonth());
     private long timeRemaining = TRAVEL_DATE.getTimeInMillis() - TODAY.getTimeInMillis();
-    private long daysRemaining = 0L;
-
+    private long daysRemaining = 0;
     @GetMapping
     public String showDaysRemaining(){
+        if(daysRemaining.equals(0){
+            return "<h1>É amanhã</h1>";
+        }else{
         return "<h1>Faltam "+daysRemaining+" dias para o dia da nossa viagem</h1>";
+        }
     }
 
 
