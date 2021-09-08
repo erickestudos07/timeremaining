@@ -19,8 +19,6 @@ public class VoyageRepository {
 
     @GetMapping
     public String showDaysRemaining(){
-        if(daysRemaining == 0){
-            return "<h1>É AMANHÃÃÃÃ!</h1>;}
         return "<h1>Faltam "+daysRemaining+" dias para o dia da nossa viagem</h1>";
     }
 
